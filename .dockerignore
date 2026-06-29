@@ -1,0 +1,17 @@
+.git
+.github
+
+.idea
+.vscode
+
+.env
+
+README.md
+
+coverage.out
+
+*.log
+
+bin/
+
+Dockerfile.old
