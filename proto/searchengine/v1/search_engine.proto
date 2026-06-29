@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package searchengine.v1;
+
+option go_package = "github.com/knowledge-search-system/search-engine/proto/searchengine/v1;searchenginev1";
+
+import "google/api/annotations.proto";
+
+message SearchRequest {
+  string q = 1;
+  int32 page = 2;
+  int32 page_size = 3;
+}
+
+message SearchResult {
+  string chunk_id = 1;
+  string file_name = 2;
+  int32 page = 3;
+  string text = 4;
+  double score = 5;
+}
+
+message SearchResponse {
+  repeated SearchResult results = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message Chunk {
+  string chunk_id = 1;
+  string document_id = 2;
+  string file_name = 3;
+  int32 page_number = 4;
+  string text = 5;
+}
+
+message IndexChunksRequest {
+  repeated Chunk chunks = 1;
+}
+
+message IndexChunksResponse {
+  int32 indexed_count = 1;
+}
+
+service SearchService {
+  rpc Search(SearchRequest) returns (SearchResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/search"
+    };
+  }
+
+  rpc IndexChunks(IndexChunksRequest) returns (IndexChunksResponse);
+}
