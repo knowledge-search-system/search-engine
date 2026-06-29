@@ -1,0 +1,28 @@
+env: local
+
+grpc:
+  port: 9090
+
+http:
+  port: 8080
+
+postgres:
+  dsn: "postgres://postgres:postgres@postgres:5432/search_engine?sslmode=disable"
+  max_conns: 10
+  min_conns: 2
+
+redis:
+  addr: "redis:6379"
+  password: ""
+  db: 0
+  cache_ttl: 5m
+
+elasticsearch:
+  addresses:
+    - "http://elasticsearch:9200"
+  username: ""
+  password: ""
+  index_name: "documents"
+
+logger:
+  level: "info"
