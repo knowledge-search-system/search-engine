@@ -2,8 +2,8 @@ package searchhistory
 
 import (
 	"github.com/Masterminds/squirrel"
-	"github.com/knowledge-search-system/search-engine/internal/repository/dbconsts"
 	"github.com/knowledge-search-system/search-engine/internal/model"
+	"github.com/knowledge-search-system/search-engine/internal/repository/dbconsts"
 )
 
 var psql = squirrel.StatementBuilder.PlaceholderFormat(squirrel.Dollar)

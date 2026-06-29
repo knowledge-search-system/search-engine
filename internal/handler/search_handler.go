@@ -3,9 +3,9 @@ package handler
 import (
 	"context"
 
-	searchenginev1 "github.com/knowledge-search-system/search-engine/proto/searchengine/v1"
 	"github.com/knowledge-search-system/search-engine/internal/model"
 	"github.com/knowledge-search-system/search-engine/internal/service"
+	searchenginev1 "github.com/knowledge-search-system/search-engine/proto/searchengine/v1"
 )
 
 type SearchHandler struct {
